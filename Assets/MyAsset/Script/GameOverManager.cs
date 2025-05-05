@@ -13,8 +13,8 @@ public class GameOverManager : MonoBehaviour
     {
         Debug.Log("✅ ShowGameOverUI called");
 
-        gameOverImage.SetActive(true);
-        gameOverButton.SetActive(true);
+        if (gameOverImage != null) gameOverImage.SetActive(true);
+        if (gameOverButton != null) gameOverButton.SetActive(true);
 
         StartCoroutine(SetFinalScoreAfterFrame());
     }
@@ -25,7 +25,12 @@ public class GameOverManager : MonoBehaviour
 
         Debug.Log("✅ SetFinalScoreAfterFrame started");
 
-       
+        if (finalScoreText == null)
+        {
+            Debug.LogError("❌ finalScoreText is null! Please assign it in the Inspector.");
+            yield break;
+        }
+
         finalScoreText.text = "TEST";
         Debug.Log("✅ FinalScoreText set to TEST");
 

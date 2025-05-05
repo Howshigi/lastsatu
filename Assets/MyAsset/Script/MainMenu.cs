@@ -19,8 +19,12 @@ public class MainMenu : MonoBehaviour
         }
 
         startMenu.SetActive(true);
-
         gameTime = 0f;
+
+        if (timeText == null)
+        {
+            Debug.LogWarning("❗ timeText is not assigned in the Inspector.");
+        }
     }
 
     void Update()
@@ -32,7 +36,10 @@ public class MainMenu : MonoBehaviour
             float minutes = Mathf.Floor(gameTime / 60);
             float seconds = Mathf.Floor(gameTime % 60);
 
-            timeText.text = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
+            if (timeText != null)
+            {
+                timeText.text = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
+            }
         }
     }
 

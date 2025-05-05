@@ -347,7 +347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80.4, y: -101.5}
+  m_AnchoredPosition: {x: 80.3999, y: -101.5}
   m_SizeDelta: {x: 955, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &169039130
@@ -1281,7 +1281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverImage: {fileID: 1392523019}
   gameOverButton: {fileID: 1647633888}
-  finalScoreText: {fileID: 0}
+  finalScoreText: {fileID: 840748902}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,7 +2171,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -34.08313, z: -366.08313, w: -64.525635}
+  m_margin: {x: 0, y: -34.08313, z: -949.02454, w: -64.525635}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
