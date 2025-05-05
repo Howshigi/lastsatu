@@ -11,6 +11,9 @@ public class PlayerControllerExam05 : MonoBehaviour
     public float xRange = 10;
     public GameObject projectilePrefab;
 
+    public float shootCooldown = 0.5f; // คูลดาวน์ยิงกระสุน
+    private float shootTimer = 0f;
+
     private float currentSpeed;
     private float sprintTimer = 0f;
     private float cooldownTimer = 0f;
@@ -69,9 +72,15 @@ public class PlayerControllerExam05 : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
 
-        if (shootAction.triggered)
+        if (shootTimer > 0f)
+        {
+            shootTimer -= Time.deltaTime;
+        }
+
+        if (shootAction.triggered && shootTimer <= 0f)
         {
             Instantiate(projectilePrefab, transform.position, transform.rotation);
+            shootTimer = shootCooldown;
         }
     }
 
