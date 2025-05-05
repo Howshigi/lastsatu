@@ -3,20 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
-    public GameObject gameOverImage;  // รูปภาพ Game Over
-    public GameObject gameOverButton; // ปุ่ม Restart
+    public GameObject gameOverImage;  
+    public GameObject gameOverButton; 
 
-    // ฟังก์ชันนี้จะถูกเรียกเมื่อป้อมพัง
+    
     public void ShowGameOverUI()
     {
         gameOverImage.SetActive(true);
         gameOverButton.SetActive(true);
     }
 
-    // ฟังก์ชันนี้จะรีสตาร์ทเกม
+    
     public void RestartGame()
     {
-        Time.timeScale = 1f;  // คืนเวลาให้ปกติ
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);  // โหลดซีนปัจจุบันใหม่
+        Time.timeScale = 1f;  
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);  
     }
 }

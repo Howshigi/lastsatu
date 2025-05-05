@@ -11,7 +11,7 @@ public class PlayerControllerExam05 : MonoBehaviour
     public float xRange = 10;
     public GameObject projectilePrefab;
 
-    public float shootCooldown = 0.5f; // คูลดาวน์ยิงกระสุน
+    public float shootCooldown = 0.5f; 
     private float shootTimer = 0f;
 
     private float currentSpeed;
