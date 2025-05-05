@@ -119,6 +119,120 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &53405855
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6955865144172882692, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_Name
+      value: Scythe Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+--- !u!1001 &128259679
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6955865144172882692, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_Name
+      value: Scythe Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +535,63 @@ MonoBehaviour:
   maxHealth: 30
   damagePerAnimal: 10
   gameOverManager: {fileID: 554026461}
+--- !u!1001 &289458392
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6955865144172882692, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_Name
+      value: Scythe Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.190001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
 --- !u!1 &425805626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1378,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &717605205
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6955865144172882692, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_Name
+      value: Scythe Variant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
 --- !u!1 &728476934
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,6 +2254,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1827072257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1634217363
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6955865144172882692, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_Name
+      value: Scythe Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
 --- !u!1 &1647633888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,3 +2933,8 @@ SceneRoots:
   - {fileID: 628276695}
   - {fileID: 637251660}
   - {fileID: 284660927}
+  - {fileID: 53405855}
+  - {fileID: 128259679}
+  - {fileID: 1634217363}
+  - {fileID: 289458392}
+  - {fileID: 717605205}
