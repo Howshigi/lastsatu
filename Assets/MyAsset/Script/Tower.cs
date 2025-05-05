@@ -2,16 +2,21 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth = 30;
     private int currentHealth;
 
     public int damagePerAnimal = 10;
 
-    public GameOverManager gameOverManager;  // เพิ่มตัวแปรนี้
+    public GameOverManager gameOverManager;
+    public TowerHeartsUI towerHeartsUI;
 
     void Start()
     {
         currentHealth = maxHealth;
+        if (towerHeartsUI != null)
+        {
+            towerHeartsUI.UpdateHearts(currentHealth, maxHealth);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -19,8 +24,6 @@ public class Tower : MonoBehaviour
         if (other.CompareTag("Animal"))
         {
             TakeDamage(damagePerAnimal);
-
-            // ลบสัตว์เมื่อเข้าฐาน (ถ้าต้องการ)
             Destroy(other.gameObject);
         }
     }
@@ -28,13 +31,15 @@ public class Tower : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("Tower HP: " + currentHealth);
+        if (towerHeartsUI != null)
+        {
+            towerHeartsUI.UpdateHearts(currentHealth, maxHealth);
+        }
 
         if (currentHealth <= 0)
         {
-            Debug.Log("Tower destroyed!");
-            gameOverManager.ShowGameOverUI();  // เรียกฟังก์ชันที่แสดง Game Over UI
-            Time.timeScale = 0f;  // หยุดเกม
+            gameOverManager.ShowGameOverUI();
+            Time.timeScale = 0f;
         }
     }
 }
