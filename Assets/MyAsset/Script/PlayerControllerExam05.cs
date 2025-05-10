@@ -1,24 +1,38 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerControllerExam05 : MonoBehaviour
 {
+    [Header("Movement Settings")]
     public float normalSpeed = 5f;
     public float sprintSpeed = 10f;
     public float sprintDuration = 5f;
     public float sprintCooldown = 20f;
+    public float xRange = 10f;
 
-    public float xRange = 10;
-    public GameObject projectilePrefab;
-
-    public float shootCooldown = 0.5f; 
-    private float shootTimer = 0f;
+    [Header("Shooting Settings")]
+    public GameObject normalProjectilePrefab;      // กระสุนธรรมดา
+    public GameObject autoAimProjectilePrefab;     // กระสุนติดตาม
+    public float shootCooldown = 0.5f;
 
     private float currentSpeed;
     private float sprintTimer = 0f;
-    private float cooldownTimer = 0f;
+    private float sprintCooldownTimer = 0f;
+    private float shootTimer = 0f;
 
     private bool isSprinting = false;
+
+    [Header("Auto-Aim Skill")]
+    public float autoAimDuration = 5f;
+    public float autoAimCooldownDuration = 20f;
+    private float autoAimTimer = 0f;
+    private float autoAimCooldown = 0f;
+    private bool isAutoAiming = false;
+
+    [Header("Sound Settings")]
+    public AudioClip autoAimSound;  // เสียงที่ใช้เมื่อกด E
+    private AudioSource audioSource;
 
     private InputAction moveAction;
     private InputAction shootAction;
@@ -29,6 +43,9 @@ public class PlayerControllerExam05 : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         shootAction = InputSystem.actions.FindAction("Shoot");
         sprintAction = InputSystem.actions.FindAction("Sprint");
+
+        // ตั้งค่า AudioSource ให้กับ GameObject นี้
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -38,7 +55,15 @@ public class PlayerControllerExam05 : MonoBehaviour
 
     void Update()
     {
-        if (!isSprinting && cooldownTimer <= 0f && sprintAction != null && sprintAction.triggered)
+        HandleMovement();
+        HandleShooting();
+        HandleAutoAimSkill();
+    }
+
+    private void HandleMovement()
+    {
+        // Sprint logic
+        if (!isSprinting && sprintCooldownTimer <= 0f && sprintAction != null && sprintAction.triggered)
         {
             isSprinting = true;
             sprintTimer = sprintDuration;
@@ -51,39 +76,107 @@ public class PlayerControllerExam05 : MonoBehaviour
             if (sprintTimer <= 0f)
             {
                 isSprinting = false;
-                cooldownTimer = sprintCooldown;
+                sprintCooldownTimer = sprintCooldown;
                 currentSpeed = normalSpeed;
             }
         }
-        else if (cooldownTimer > 0f)
+        else if (sprintCooldownTimer > 0f)
         {
-            cooldownTimer -= Time.deltaTime;
+            sprintCooldownTimer -= Time.deltaTime;
         }
 
+        // Movement input
         float horizontalInput = moveAction.ReadValue<Vector2>().x;
         transform.Translate(horizontalInput * currentSpeed * Time.deltaTime * Vector3.right);
 
-        if (transform.position.x < -xRange)
-        {
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-        }
-        if (transform.position.x > xRange)
-        {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
-        }
+        // Clamp position
+        Vector3 clampedPos = transform.position;
+        clampedPos.x = Mathf.Clamp(clampedPos.x, -xRange, xRange);
+        transform.position = clampedPos;
+    }
 
+    private void HandleShooting()
+    {
         if (shootTimer > 0f)
-        {
             shootTimer -= Time.deltaTime;
-        }
 
         if (shootAction.triggered && shootTimer <= 0f)
         {
-            Instantiate(projectilePrefab, transform.position, transform.rotation);
-            shootTimer = shootCooldown;
+            if (normalProjectilePrefab != null)
+            {
+                Instantiate(normalProjectilePrefab, transform.position, transform.rotation);
+                shootTimer = shootCooldown;
+            }
         }
     }
 
-    public float GetSprintCooldownRemaining() => Mathf.Clamp(cooldownTimer, 0f, sprintCooldown);
-    public bool IsSprintReady() => cooldownTimer <= 0f && !isSprinting;
+    private void HandleAutoAimSkill()
+    {
+        if (!isAutoAiming && autoAimCooldown <= 0f && Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            // เล่นเสียงเมื่อกด E
+            if (audioSource != null && autoAimSound != null)
+            {
+                audioSource.PlayOneShot(autoAimSound);
+            }
+
+            isAutoAiming = true;
+            autoAimTimer = autoAimDuration;
+            autoAimCooldown = autoAimCooldownDuration;
+            StartCoroutine(AutoAimAttack());
+        }
+
+        if (!isAutoAiming && autoAimCooldown > 0f)
+        {
+            autoAimCooldown -= Time.deltaTime;
+        }
+    }
+
+    private IEnumerator AutoAimAttack()
+    {
+        float elapsed = 0f;
+        float fireInterval = 0.1f;
+
+        while (elapsed < autoAimDuration)
+        {
+            GameObject target = FindClosestEnemy();
+            if (target != null && autoAimProjectilePrefab != null)
+            {
+                GameObject bullet = Instantiate(autoAimProjectilePrefab, transform.position, Quaternion.identity);
+                Vector3 dir = (target.transform.position - transform.position).normalized;
+                var proj = bullet.GetComponent<Projectile>();
+                if (proj != null)
+                {
+                    proj.SetDirection(dir);
+                }
+            }
+
+            yield return new WaitForSeconds(fireInterval);
+            elapsed += fireInterval;
+        }
+
+        isAutoAiming = false;
+    }
+
+    private GameObject FindClosestEnemy()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Animal");
+        GameObject closest = null;
+        float minDist = Mathf.Infinity;
+
+        foreach (var enemy in enemies)
+        {
+            float dist = Vector3.Distance(transform.position, enemy.transform.position);
+            if (dist < minDist)
+            {
+                closest = enemy;
+                minDist = dist;
+            }
+        }
+
+        return closest;
+    }
+
+    public float GetSprintCooldownRemaining() => Mathf.Clamp(sprintCooldownTimer, 0f, sprintCooldown);
+    public bool IsSprintReady() => sprintCooldownTimer <= 0f && !isSprinting;
 }

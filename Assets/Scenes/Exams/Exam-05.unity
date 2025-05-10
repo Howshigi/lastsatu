@@ -1405,9 +1405,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveConfigurations:
   - enemyPrefabs:
-    - {fileID: 7949533734212778639, guid: c7a80e60cbd82414282a30fda38e193d, type: 3}
     - {fileID: 8882513886274045516, guid: 1b7420dba7d8baf43a2feab6a0763bbf, type: 3}
-    - {fileID: 4856339743466158455, guid: ef7037a830d2bff408a015608b81e6e5, type: 3}
+    - {fileID: 8882513886274045516, guid: 1b7420dba7d8baf43a2feab6a0763bbf, type: 3}
+    - {fileID: 8882513886274045516, guid: 1b7420dba7d8baf43a2feab6a0763bbf, type: 3}
     enemyCount: 10
     spawnInterval: 2
     waveInterval: 10
@@ -2539,6 +2539,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100046, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1818353604}
+    - targetCorrespondingSourceObject: {fileID: 100046, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1818353608}
   m_SourcePrefab: {fileID: 100100000, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
 --- !u!1 &1183688027
 GameObject:
@@ -3641,13 +3644,114 @@ MonoBehaviour:
   sprintDuration: 5
   sprintCooldown: 10
   xRange: 20
-  projectilePrefab: {fileID: 4714108246129984350, guid: fcd5157416dff4641bd34dc26c22cabb, type: 3}
+  normalProjectilePrefab: {fileID: 4714108246129984350, guid: fcd5157416dff4641bd34dc26c22cabb, type: 3}
+  autoAimProjectilePrefab: {fileID: 4714108246129984350, guid: 2504d13bef6ba844fa081384381bec79, type: 3}
   shootCooldown: 0.5
+  autoAimDuration: 5
+  autoAimCooldownDuration: 20
+  autoAimSound: {fileID: 8300000, guid: 8012de7b69f54b143a27c15ea5b1c0d1, type: 3}
 --- !u!4 &1818353606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400046, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
   m_PrefabInstance: {fileID: 1080256213}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1818353608
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818353603}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8012de7b69f54b143a27c15ea5b1c0d1, type: 3}
+  m_Resource: {fileID: 8300000, guid: 8012de7b69f54b143a27c15ea5b1c0d1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1819395379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7765299574981423550, guid: 95f09ad28df2199488f32db72f05667a, type: 3}
