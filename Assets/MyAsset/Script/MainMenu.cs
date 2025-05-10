@@ -7,29 +7,21 @@ public class MainMenu : MonoBehaviour
     public GameObject player;
     public TextMeshProUGUI timeText;
 
-    private float gameTime;
+    private float gameTime = 0f;
 
     void Start()
     {
         Time.timeScale = 0f;
-
-        if (player != null)
+        startMenu.SetActive(true);
+        if (player != null) 
         {
             player.SetActive(false);
-        }
-
-        startMenu.SetActive(true);
-        gameTime = 0f;
-
-        if (timeText == null)
-        {
-            Debug.LogWarning("❗ timeText is not assigned in the Inspector.");
         }
     }
 
     void Update()
     {
-        if (Time.timeScale > 0)
+        if (Time.timeScale > 0f)
         {
             gameTime += Time.deltaTime;
 
@@ -38,16 +30,15 @@ public class MainMenu : MonoBehaviour
 
             if (timeText != null)
             {
-                timeText.text = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
+                timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
             }
         }
     }
 
     public void StartGame()
     {
-        startMenu.SetActive(false);
         Time.timeScale = 1f;
-
+        startMenu.SetActive(false);
         if (player != null)
         {
             player.SetActive(true);
