@@ -179,4 +179,10 @@ public class PlayerControllerExam05 : MonoBehaviour
 
     public float GetSprintCooldownRemaining() => Mathf.Clamp(sprintCooldownTimer, 0f, sprintCooldown);
     public bool IsSprintReady() => sprintCooldownTimer <= 0f && !isSprinting;
+    
+    public bool IsAutoAimReady()
+    {
+        return !isAutoAiming && autoAimCooldown <= 0f;
+    }
+    
 }
