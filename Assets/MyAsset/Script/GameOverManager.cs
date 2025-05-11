@@ -11,7 +11,7 @@ public class GameOverManager : MonoBehaviour
 
     public void ShowGameOverUI()
     {
-        Debug.Log("✅ ShowGameOverUI called");
+        Debug.Log("ShowGameOverUI");
 
         if (gameOverImage != null) gameOverImage.SetActive(true);
         if (gameOverButton != null) gameOverButton.SetActive(true);
@@ -23,28 +23,28 @@ public class GameOverManager : MonoBehaviour
     {
         yield return null;
 
-        Debug.Log("✅ SetFinalScoreAfterFrame started");
+        Debug.Log("SetFinalScore");
 
         if (finalScoreText == null)
         {
-            Debug.LogError("❌ finalScoreText is null! Please assign it in the Inspector.");
+            Debug.LogError("finalScoreText is null");
             yield break;
         }
 
         finalScoreText.text = "TEST";
-        Debug.Log("✅ FinalScoreText set to TEST");
+        Debug.Log("TEST");
 
         if (ScoreManager.Instance != null)
         {
             int finalScore = ScoreManager.Instance.score;
-            Debug.Log("✅ Final Score from ScoreManager: " + finalScore);
+            Debug.Log(" Final Score from ScoreManager: " + finalScore);
 
             finalScoreText.text = "Final Score: " + finalScore;
-            Debug.Log("✅ FinalScoreText updated to final score");
+            Debug.Log(" FinalScoreText updated to final score");
         }
         else
         {
-            Debug.LogWarning("⚠️ ScoreManager.Instance is null!");
+            Debug.LogWarning("⚠ ScoreManager.Instance is null!");
         }
     }
 

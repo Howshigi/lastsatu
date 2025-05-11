@@ -12,8 +12,8 @@ public class PlayerControllerExam05 : MonoBehaviour
     public float xRange = 10f;
 
     [Header("Shooting Settings")]
-    public GameObject normalProjectilePrefab;      // กระสุนธรรมดา
-    public GameObject autoAimProjectilePrefab;     // กระสุนติดตาม
+    public GameObject normalProjectilePrefab;      
+    public GameObject autoAimProjectilePrefab;    
     public float shootCooldown = 0.5f;
 
     private float currentSpeed;
@@ -31,7 +31,7 @@ public class PlayerControllerExam05 : MonoBehaviour
     private bool isAutoAiming = false;
 
     [Header("Sound Settings")]
-    public AudioClip autoAimSound;  // เสียงที่ใช้เมื่อกด E
+    public AudioClip autoAimSound; 
     private AudioSource audioSource;
 
     private InputAction moveAction;
@@ -44,7 +44,7 @@ public class PlayerControllerExam05 : MonoBehaviour
         shootAction = InputSystem.actions.FindAction("Shoot");
         sprintAction = InputSystem.actions.FindAction("Sprint");
 
-        // ตั้งค่า AudioSource ให้กับ GameObject นี้
+        
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -62,7 +62,7 @@ public class PlayerControllerExam05 : MonoBehaviour
 
     private void HandleMovement()
     {
-        // Sprint logic
+       
         if (!isSprinting && sprintCooldownTimer <= 0f && sprintAction != null && sprintAction.triggered)
         {
             isSprinting = true;
@@ -85,11 +85,11 @@ public class PlayerControllerExam05 : MonoBehaviour
             sprintCooldownTimer -= Time.deltaTime;
         }
 
-        // Movement input
+        
         float horizontalInput = moveAction.ReadValue<Vector2>().x;
         transform.Translate(horizontalInput * currentSpeed * Time.deltaTime * Vector3.right);
 
-        // Clamp position
+       
         Vector3 clampedPos = transform.position;
         clampedPos.x = Mathf.Clamp(clampedPos.x, -xRange, xRange);
         transform.position = clampedPos;
@@ -114,7 +114,7 @@ public class PlayerControllerExam05 : MonoBehaviour
     {
         if (!isAutoAiming && autoAimCooldown <= 0f && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            // เล่นเสียงเมื่อกด E
+           
             if (audioSource != null && autoAimSound != null)
             {
                 audioSource.PlayOneShot(autoAimSound);
